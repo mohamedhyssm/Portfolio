@@ -101,7 +101,7 @@ export function Navbar() {
             variants={logoVariants}
             className="text-xl md:text-2xl font-bold tracking-tight text-foreground select-none cursor-pointer"
           >
-            <img src="/logo.png" alt="logo" className="w-20 h-20" />
+            <img src="/Logo.png" alt="logo" className="w-20 h-20" />
           </motion.span>
           <ModeToggle />
         </div>
