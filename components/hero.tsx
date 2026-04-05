@@ -199,7 +199,7 @@ export function Hero() {
           >
             <div className="absolute inset-[10%] rounded-full bg-violet-600/10 blur-3xl pointer-events-none" />
             <img
-              src="/hero.jpg"
+              src="/Hero.jpg"
               alt=""
               className="w-full h-full object-contain rounded-xl"
             />
