@@ -2,7 +2,13 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { ArrowUpRight, Layers, FolderOpen, CheckCircle2 } from "lucide-react";
+import {
+  ArrowUpRight,
+  Layers,
+  FolderOpen,
+  CheckCircle2,
+  ArrowRight,
+} from "lucide-react";
 import { useRef } from "react";
 
 interface Project {
@@ -298,6 +304,30 @@ const Projects = () => {
             <ProjectCard key={project.title} project={{ ...project, index }} />
           ))}
         </div>
+
+        {/* ── Bottom CTA ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mt-24 text-center"
+        >
+          <p className="text-sm text-muted-foreground mb-4 font-medium">
+            and many more to come
+          </p>
+          <a
+            href="https://github.com/mohamedhyssm?tab=repositories"
+            target="_blank"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-violet-600 dark:text-violet-400 hover:text-violet-500 transition-colors group"
+          >
+            See all projects on GitHub
+            <ArrowRight
+              size={15}
+              className="group-hover:translate-x-1 transition-transform duration-200"
+            />
+          </a>
+        </motion.div>
       </div>
     </section>
   );

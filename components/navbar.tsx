@@ -10,7 +10,6 @@ import { ModeToggle } from "./theme/toggle-mode";
 const NAV_LINKS = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
-  { label: "Certificates", href: "#certificates" },
   { label: "Projects", href: "#projects" },
 ];
 

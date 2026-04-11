@@ -186,30 +186,6 @@ const About = () => {
             </strong>{" "}
             — not just side projects that collect dust.
           </p>
-
-          {/* Stats row */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3, duration: 0.6 }}
-            className="mt-10 flex items-center justify-center gap-8 flex-wrap"
-          >
-            {[
-              { value: "100%", label: "Attendance" },
-              { value: "3+", label: "Years building" },
-              { value: "∞", label: "Lines shipped" },
-            ].map((stat) => (
-              <div key={stat.label} className="text-center">
-                <p className="text-3xl font-black bg-linear-to-r from-violet-500 to-blue-500 bg-clip-text text-transparent">
-                  {stat.value}
-                </p>
-                <p className="text-xs text-muted-foreground mt-1 font-medium">
-                  {stat.label}
-                </p>
-              </div>
-            ))}
-          </motion.div>
         </motion.div>
 
         {/* ── Timeline ── */}

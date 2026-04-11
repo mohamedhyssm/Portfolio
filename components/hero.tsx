@@ -94,7 +94,7 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-28"
+      className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-10"
     >
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -109,7 +109,7 @@ export function Hero() {
         animate="visible"
         className="relative max-w-7xl mx-auto px-6 md:px-10 w-full pb-16"
       >
-        <div className="flex flex-col-reverse md:flex-row gap-12 lg:gap-8 items-center min-h-[calc(100vh-6rem)]">
+        <div className="flex flex-col-reverse md:flex-row gap-4 md:gap-8 items-center min-h-[calc(100vh-6rem)]">
           {/* LEFT */}
           <div className="flex flex-col justify-center gap-7 lg:max-w-xl">
             {/* Eyebrow */}
@@ -195,14 +195,10 @@ export function Hero() {
           {/* RIGHT */}
           <motion.div
             variants={canvasVariant}
-            className="relative h-[400px] sm:h-[500px] lg:h-[600px] w-full"
+            className="relative h-[400px] sm:h-[500px] lg:h-[600px] w-full flex justify-center items-center"
           >
             <div className="absolute inset-[10%] rounded-full bg-violet-600/10 blur-3xl pointer-events-none" />
-            <img
-              src="/Hero.jpg"
-              alt=""
-              className="w-full h-full object-contain rounded-xl"
-            />
+            <img src="/Hero.jpg" alt="" className="rounded-2xl" />
           </motion.div>
         </div>
       </motion.div>
