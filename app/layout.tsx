@@ -19,6 +19,7 @@ export const metadata: Metadata = {
     "Node.js",
   ],
   authors: [{ name: "Mohamed Haytham Mohamed" }],
+  metadataBase: new URL("https://mohamedhaytham.vercel.app"),
   openGraph: {
     title: "Mohamed Haytham Mohamed",
     description: "Portfolio of a software engineer",
