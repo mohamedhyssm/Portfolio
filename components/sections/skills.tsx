@@ -125,8 +125,8 @@ export function Skills() {
             </span>
           </h2>
           <p className="mt-4 text-sm md:text-base text-muted-foreground max-w-md mx-auto">
-            A curated set of technologies I use to build fast, scalable, and
-            beautiful products — from the browser to the server.
+            Technologies I use to build scalable and production-ready web
+            applications.
           </p>
         </motion.div>
 

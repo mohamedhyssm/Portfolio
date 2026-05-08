@@ -2,12 +2,7 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import {
-  ArrowUpRight,
-  Layers,
-  FolderOpen,
-  ArrowRight,
-} from "lucide-react";
+import { ArrowUpRight, Layers, FolderOpen, ArrowRight } from "lucide-react";
 import { useRef } from "react";
 import { PROJECTS, type Project } from "@/data/projects";
 
@@ -115,13 +110,18 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
 
               {/* Highlights */}
               <ul className="space-y-2.5 mb-7">
-                {project.highlights.map((item) => (
+                {project.highlights.map((item, index) => (
                   <li
-                    key={item}
+                    key={index}
                     className="flex items-start gap-2.5 text-sm text-muted-foreground"
                   >
-                    <span className={`mt-0.5 shrink-0 w-[15px] h-[15px] relative`}>
-                      <svg viewBox="0 0 15 15" className="absolute inset-0 w-full h-full">
+                    <span
+                      className={`mt-0.5 shrink-0 w-[15px] h-[15px] relative`}
+                    >
+                      <svg
+                        viewBox="0 0 15 15"
+                        className="absolute inset-0 w-full h-full"
+                      >
                         <defs>
                           <linearGradient
                             id={`grad-${project.index}`}
@@ -132,11 +132,15 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
                           >
                             <stop
                               offset="0%"
-                              stopColor={project.index === 0 ? "#8b5cf6" : "#10b981"}
+                              stopColor={
+                                project.index === 0 ? "#8b5cf6" : "#10b981"
+                              }
                             />
                             <stop
                               offset="100%"
-                              stopColor={project.index === 0 ? "#3b82f6" : "#06b6d4"}
+                              stopColor={
+                                project.index === 0 ? "#3b82f6" : "#06b6d4"
+                              }
                             />
                           </linearGradient>
                         </defs>
@@ -165,7 +169,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
 
               {/* CTA */}
               <div className="mt-auto">
-                {project.link ? (
+                {project.link && (
                   <a
                     href={project.link}
                     target="_blank"
@@ -175,11 +179,6 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
                     View live project
                     <ArrowUpRight size={15} />
                   </a>
-                ) : (
-                  <div className="inline-flex items-center gap-2.5 rounded-full px-6 py-3 text-sm font-bold text-muted-foreground border border-border/60 dark:border-white/10 bg-muted/30 dark:bg-white/5 cursor-default select-none">
-                    Private project
-                    <FolderOpen size={15} />
-                  </div>
                 )}
               </div>
             </div>
@@ -229,14 +228,14 @@ const Projects = () => {
             <strong className="text-foreground font-semibold">
               Real systems
             </strong>{" "}
-            used by real people — engineered to scale, built to last.
+            used by real people
           </p>
         </motion.div>
 
         {/* ── Project cards ── */}
         <div className="flex flex-col gap-8">
           {PROJECTS.map((project, index) => (
-            <ProjectCard key={project.title} project={{ ...project, index }} />
+            <ProjectCard key={index} project={{ ...project, index }} />
           ))}
         </div>
 

@@ -16,7 +16,7 @@ export const TIMELINE_ITEMS: TimelineItem[] = [
   },
   {
     title: "Leadership mindset",
-    text: "During the program, I was actively involved in activities and often took on leadership roles. That experience shaped the way I approach teamwork, responsibility, and building with intention.",
+    text: "During the program, I was actively involved in activities and often took on leadership roles. It helped me become more comfortable taking responsibility and working with others.",
     align: "right",
     tag: "Growth",
     accent: "from-blue-500 to-violet-500",
@@ -30,7 +30,7 @@ export const TIMELINE_ITEMS: TimelineItem[] = [
   },
   {
     title: "Self-learning phase",
-    text: "After the program ended, I kept learning on my own and built my stack around Next.js, Express, PostgreSQL, Redis, and modern backend architecture — staying curious and relentless.",
+    text: "After the program ended, I kept learning on my own and built my stack around Next.js, Express, PostgreSQL, Redis, and modern backend architecture.",
     align: "right",
     tag: "2023",
     accent: "from-violet-500 to-pink-500",
@@ -44,7 +44,7 @@ export const TIMELINE_ITEMS: TimelineItem[] = [
   },
   {
     title: "What I build now",
-    text: "Today, I focus on production-ready systems that are clean, scalable, and designed to solve real problems — not just look good in a demo. Every line of code has a purpose.",
+    text: "Today, I care about building systems that are maintainable, scalable, and useful in real-world scenarios.",
     align: "right",
     tag: "Present",
     accent: "from-orange-500 to-violet-500",
