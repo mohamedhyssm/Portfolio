@@ -38,6 +38,7 @@ export const PROJECTS: Project[] = [
       "Cost tracking with operational analytics for decision-making",
       "Automated invoice generation for factory operations",
       "Centralized operations and production dashboard",
+      "Solo-developed from architecture to deployment",
     ],
     tags: ["Next.js", "Express.js", "PostgreSQL", "Redis"],
     image: "/factory-1.png",
