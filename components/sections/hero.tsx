@@ -2,15 +2,7 @@
 "use client";
 import { motion, Variants } from "framer-motion";
 import { ArrowRight, Mail, ChevronDown } from "lucide-react";
-
-const TECH_TAGS = [
-  "Next.js",
-  "TypeScript",
-  "Node.js",
-  "Express",
-  "PostgreSQL",
-  "Redis",
-];
+import { HERO_TECH_TAGS } from "@/data/skills";
 
 export function Hero() {
   // ── Variants ─────────────────────────────────────
@@ -94,7 +86,7 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-10"
+      className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-15"
     >
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -152,7 +144,7 @@ export function Hero() {
               variants={tagsContainer}
               className="flex flex-wrap gap-2"
             >
-              {TECH_TAGS.map((tag) => (
+              {HERO_TECH_TAGS.map((tag) => (
                 <motion.span
                   key={tag}
                   variants={tagItem}
@@ -195,10 +187,13 @@ export function Hero() {
           {/* RIGHT */}
           <motion.div
             variants={canvasVariant}
-            className="relative h-[400px] sm:h-[500px] lg:h-[600px] w-full flex justify-center items-center"
+            className="relative w-full max-w-xl flex justify-center items-center"
           >
-            <div className="absolute inset-[10%] rounded-full bg-violet-600/10 blur-3xl pointer-events-none" />
-            <img src="/Hero.jpg" alt="" className="rounded-2xl" />
+            <img
+              src="/Hero.jpg"
+              alt="Mohamed Haytham"
+              className="rounded-2xl w-full h-full"
+            />
           </motion.div>
         </div>
       </motion.div>

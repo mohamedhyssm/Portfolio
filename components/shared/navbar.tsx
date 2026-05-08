@@ -5,11 +5,12 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { ModeToggle } from "./theme/toggle-mode";
+import { ModeToggle } from "@/components/theme/toggle-mode";
 
 const NAV_LINKS = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
+  { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
 ];
 

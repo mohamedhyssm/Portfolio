@@ -1,37 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mohamed Haytham — Portfolio
 
-## Getting Started
+A modern, dark-themed portfolio website for **Mohamed Haytham**, a Full-Stack Web Developer. Built for performance, clarity, and real-world presentation.
 
-First, run the development server:
+**Live:** [mohamedhaytham.vercel.app](https://mohamedhaytham.vercel.app)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Framework | Next.js (App Router) |
+| Styling | Tailwind CSS v4 |
+| Components | Shadcn/ui |
+| Animations | Framer Motion |
+| Font | Noto Sans (Google Fonts) |
+| Theme | next-themes (dark/light toggle) |
+| Language | TypeScript |
+
+---
+
+## Project Structure
+
+```
+my-portfolio/
+├── app/
+│   ├── layout.tsx          # Root layout, metadata, font, ThemeProvider
+│   ├── page.tsx            # Page assembly — imports all sections & shared components
+│   └── globals.css         # Global styles & Tailwind tokens
+│
+├── components/
+│   ├── sections/           # Page sections (one file per section)
+│   │   ├── hero.tsx        # Hero section
+│   │   ├── about.tsx       # About + Timeline section
+│   │   ├── skills.tsx      # Skills grid section
+│   │   ├── projects.tsx    # Projects showcase section
+│   │   └── footer.tsx      # Footer + contact section
+│   │
+│   ├── shared/             # Reusable layout-level components
+│   │   ├── navbar.tsx      # Fixed top navigation bar
+│   │   └── floating-contact.tsx  # Floating FAB with social links
+│   │
+│   ├── theme/              # Theme utilities
+│   │   ├── theme-provider.tsx
+│   │   └── toggle-mode.tsx
+│   │
+│   └── ui/                 # Shadcn/ui primitives
+│
+├── data/                   # Static data (no JSX — pure TypeScript)
+│   ├── about.ts            # Timeline items for the About section
+│   ├── projects.ts         # Project list with highlights, tags, images
+│   ├── skills.ts           # Skill categories + hero tech tags
+│   └── social.ts           # Social links shared by Footer & FloatingContact
+│
+├── lib/
+│   └── utils.ts            # cn() utility
+│
+└── public/                 # Static assets (images, logo)
+    ├── Logo.png
+    ├── Hero.jpg
+    ├── lms-1.png
+    └── factory-1.png
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Sections
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Section | Description |
+|---|---|
+| **Hero** | Full-screen intro with animated heading, tech tags, and CTA buttons |
+| **About** | Alternating timeline cards narrating the developer journey |
+| **Skills** | 4-column card grid — Front-End, Back-End, Database, Tools |
+| **Projects** | Full-width alternating project cards with live links |
+| **Footer** | Contact section with social links and copyright |
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Running Locally
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+# Install dependencies
+bun install
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Start dev server
+bun run dev
+```
 
-## Deploy on Vercel
+Open [http://localhost:3000](http://localhost:3000).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-"# Portfolio" 
+## Key Design Decisions
+
+- **`data/` is JSX-free** — all data files export plain TypeScript. Icons that require JSX (e.g. Lucide icons in skills) are resolved via an `ICON_MAP` inside the component.
+- **Social links are shared** — `data/social.ts` is the single source of truth for `Footer` and `FloatingContact`, eliminating duplication.
+- **Sub-components stay private** — `TimelineCard` (about) and `ProjectCard` (projects) live inside their section file since they are not reused elsewhere.
+- **`sections/` vs `shared/`** — sections are page-specific and rendered once; shared components (navbar, floating FAB) are layout-level.

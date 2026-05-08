@@ -6,59 +6,17 @@ import {
   ArrowUpRight,
   Layers,
   FolderOpen,
-  CheckCircle2,
   ArrowRight,
 } from "lucide-react";
 import { useRef } from "react";
+import { PROJECTS, type Project } from "@/data/projects";
 
-interface Project {
-  title: string;
-  subtitle: string;
-  description: string;
-  highlights: string[];
-  tags: string[];
-  link?: string;
-  image: string;
-  accent: string;
-  index: number;
+/* ─── Sub-component ─── */
+interface ProjectCardProps {
+  project: Project & { index: number };
 }
 
-const PROJECTS: Omit<Project, "index">[] = [
-  {
-    title: "LMS Platform",
-    subtitle: "Full-stack learning management system",
-    description:
-      "A production-ready learning system engineered for real institutions — not a demo, not a clone. Every feature was designed around how teachers teach and students actually learn.",
-    highlights: [
-      "Admin dashboard with deep analytics",
-      "Smart revision & spaced repetition system",
-      "Exams, assignments & grading engine",
-      "Video management with streaming",
-      "Parent tracking & progress insights",
-    ],
-    tags: ["Next.js", "PostgreSQL", "Redis", "Express", "Production"],
-    link: "https://kotbacademy.com",
-    image: "/lms-1.png",
-    accent: "from-violet-500 to-blue-500",
-  },
-  {
-    title: "Factory Management System",
-    subtitle: "Operations & workforce management",
-    description:
-      "Built to replace paper-based factory workflows with a clean, fast digital system. Handles the full lifecycle from worker management to invoice generation — all in one place.",
-    highlights: [
-      "Worker & representative management",
-      "Real-time cost tracking",
-      "Automated invoice generation",
-      "Operations & production dashboard",
-    ],
-    tags: ["Next.js", "PostgreSQL", "Express", "Redis"],
-    image: "/factory-1.png",
-    accent: "from-emerald-500 to-cyan-500",
-  },
-];
-
-const ProjectCard = ({ project }: { project: Project }) => {
+const ProjectCard = ({ project }: ProjectCardProps) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
   const isEven = project.index % 2 === 0;
@@ -78,7 +36,6 @@ const ProjectCard = ({ project }: { project: Project }) => {
           >
             {/* ── Image side ── */}
             <div className="relative overflow-hidden min-h-[280px] lg:min-h-[420px]">
-              {/* Checkered/grid background for contain mode */}
               <div className="absolute inset-0 bg-muted/40 dark:bg-zinc-800/50">
                 <div
                   className="absolute inset-0 opacity-[0.035] dark:opacity-[0.06]"
@@ -88,7 +45,6 @@ const ProjectCard = ({ project }: { project: Project }) => {
                     backgroundSize: "32px 32px",
                   }}
                 />
-                {/* Gentle center radial glow */}
                 <div
                   className={`absolute inset-0 bg-linear-to-br ${project.accent} opacity-5 group-hover:opacity-10 transition-opacity duration-500`}
                 />
@@ -105,7 +61,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
                 className="absolute inset-0 w-full h-full object-contain p-6 transition-transform duration-700 group-hover:scale-[1.03]"
               />
 
-              {/* Number watermark */}
+              {/* Number badge */}
               <div className="absolute top-4 left-4 z-20">
                 <span
                   className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-linear-to-r ${project.accent} text-white text-[11px] font-bold uppercase tracking-widest shadow-lg`}
@@ -164,25 +120,8 @@ const ProjectCard = ({ project }: { project: Project }) => {
                     key={item}
                     className="flex items-start gap-2.5 text-sm text-muted-foreground"
                   >
-                    <CheckCircle2
-                      size={15}
-                      className={`mt-0.5 shrink-0 text-transparent`}
-                      style={{
-                        fill: "url(#grad)",
-                        stroke: "none",
-                      }}
-                    />
-                    <CheckCircle2
-                      size={15}
-                      className={`mt-0.5 shrink-0 hidden`}
-                    />
-                    <span
-                      className={`mt-0.5 shrink-0 w-[15px] h-[15px] relative`}
-                    >
-                      <svg
-                        viewBox="0 0 15 15"
-                        className="absolute inset-0 w-full h-full"
-                      >
+                    <span className={`mt-0.5 shrink-0 w-[15px] h-[15px] relative`}>
+                      <svg viewBox="0 0 15 15" className="absolute inset-0 w-full h-full">
                         <defs>
                           <linearGradient
                             id={`grad-${project.index}`}
@@ -193,15 +132,11 @@ const ProjectCard = ({ project }: { project: Project }) => {
                           >
                             <stop
                               offset="0%"
-                              stopColor={
-                                project.index === 0 ? "#8b5cf6" : "#10b981"
-                              }
+                              stopColor={project.index === 0 ? "#8b5cf6" : "#10b981"}
                             />
                             <stop
                               offset="100%"
-                              stopColor={
-                                project.index === 0 ? "#3b82f6" : "#06b6d4"
-                              }
+                              stopColor={project.index === 0 ? "#3b82f6" : "#06b6d4"}
                             />
                           </linearGradient>
                         </defs>
@@ -255,6 +190,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
   );
 };
 
+/* ─── Section ─── */
 const Projects = () => {
   return (
     <section id="projects" className="relative py-28 overflow-hidden">
@@ -273,7 +209,6 @@ const Projects = () => {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="max-w-3xl mx-auto text-center mb-20"
         >
-          {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-violet-500/30 bg-violet-500/10 dark:bg-violet-500/15 text-violet-600 dark:text-violet-300 text-xs font-bold tracking-[0.22em] uppercase mb-6 shadow-sm">
             <FolderOpen size={13} />
             Selected Work
