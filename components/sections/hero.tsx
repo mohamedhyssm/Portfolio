@@ -132,7 +132,7 @@ export function Hero() {
             >
               Full Stack Developer specializing in{" "}
               <span className="text-foreground font-medium">Next.js</span>,{" "}
-              <span className="text-foreground font-medium">Express</span>, and{" "}
+              <span className="text-foreground font-medium">NestJs</span>, and{" "}
               <span className="text-foreground font-medium">
                 high-performance architectures
               </span>

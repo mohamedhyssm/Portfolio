@@ -27,33 +27,41 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     color: "from-orange-500 to-red-500",
     skills: [
       "Node.js",
+      "NestJs",
       "Express.js",
       "REST APIs",
       "Authentication (JWT)",
+      "Refresh Token Rotation",
       "Security (Helmet, CORS)",
       "Rate Limiting",
-      "WebSockets",
     ],
   },
   {
     id: "database",
     label: "Database",
     color: "from-emerald-500 to-teal-500",
-    skills: ["PostgreSQL", "Prisma", "MongoDB", "Redis"],
+    skills: ["PostgreSQL", "Prisma ORM", "MongoDB", "Redis"],
   },
   {
     id: "tools",
     label: "Tools & Technologies",
     color: "from-yellow-500 to-amber-500",
-    skills: ["Git", "GitHub", "R2", "Postman"],
+    skills: [
+      "Git",
+      "GitHub",
+      "Coolify (deployment on VPS)",
+      "Cloudflare R2 & CDN",
+      "Postman",
+      "Docker (Basics)",
+    ],
   },
 ];
 
 export const HERO_TECH_TAGS = [
   "Next.js",
   "TypeScript",
+  "NestJs",
   "Node.js",
-  "Express",
   "PostgreSQL",
   "Redis",
 ];

@@ -30,7 +30,7 @@ export const TIMELINE_ITEMS: TimelineItem[] = [
   },
   {
     title: "Self-learning phase",
-    text: "After the program ended, I kept learning on my own and built my stack around Next.js, Express, PostgreSQL, Redis, and modern backend architecture.",
+    text: "After the program ended, I kept learning on my own and built my stack around Next.js, NestJs, PostgreSQL, Redis, and modern backend architecture.",
     align: "right",
     tag: "2023",
     accent: "from-violet-500 to-pink-500",
