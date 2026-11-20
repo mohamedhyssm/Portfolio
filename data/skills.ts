@@ -1,7 +1,7 @@
 export interface SkillCategory {
   id: string;
   label: string;
-  color: string;
+  description: string;
   skills: string[];
 }
 
@@ -9,7 +9,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
   {
     id: "frontend",
     label: "Front-End",
-    color: "from-violet-500 to-blue-500",
+    description: "I use Next.js and TypeScript to build interfaces such as the student and admin dashboards in Kotb Academy.",
     skills: [
       "TypeScript",
       "Next.js",
@@ -24,10 +24,10 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
   {
     id: "backend",
     label: "Back-End",
-    color: "from-orange-500 to-red-500",
+    description: "I build APIs and application logic for workflows like exams, grading, and role-based access.",
     skills: [
       "Node.js",
-      "NestJs",
+      "NestJS",
       "Express.js",
       "REST APIs",
       "Authentication (JWT)",
@@ -39,13 +39,13 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
   {
     id: "database",
     label: "Database",
-    color: "from-emerald-500 to-teal-500",
+    description: "I used PostgreSQL and Redis in Kotb Academy alongside the application’s exam and dashboard workflows.",
     skills: ["PostgreSQL", "Prisma ORM", "MongoDB", "Redis"],
   },
   {
     id: "tools",
     label: "Tools & Technologies",
-    color: "from-yellow-500 to-amber-500",
+    description: "I use these tools to manage source code, test APIs, deploy to a VPS, and deliver media.",
     skills: [
       "Git",
       "GitHub",
@@ -53,15 +53,13 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
       "Cloudflare R2 & CDN",
       "Postman",
       "Docker (Basics)",
+      "Jest",
     ],
   },
-];
-
-export const HERO_TECH_TAGS = [
-  "Next.js",
-  "TypeScript",
-  "NestJs",
-  "Node.js",
-  "PostgreSQL",
-  "Redis",
+  {
+    id: "automation",
+    label: "Integrations & automation",
+    description: "At Grove Engine, I connect payments, lead pipelines, and automated follow-ups with GoHighLevel.",
+    skills: ["GoHighLevel", "Webhooks", "Payment Integrations", "Marketing Workflows"],
+  },
 ];

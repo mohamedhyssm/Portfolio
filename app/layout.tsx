@@ -2,34 +2,32 @@ import type { Metadata } from "next";
 import { Noto_Sans } from "next/font/google";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import "./globals.css";
-import { cn } from "@/lib/utils";
 
-const notoSans = Noto_Sans({ subsets: ["latin"], variable: "--font-sans" });
+const notoSans = Noto_Sans({
+  subsets: ["latin"],
+  variable: "--font-noto-sans",
+});
+
+const title = "Mohamed Haytham | Full Stack Developer";
+const description =
+  "Mohamed Haytham builds full-stack web applications, backend systems, and learning platforms.";
 
 export const metadata: Metadata = {
-  title: "Mohamed Haytham",
-  description: "Portfolio of a software engineer",
+  title,
+  description,
   applicationName: "Mohamed Haytham Portfolio",
-  keywords: [
-    "Portfolio",
-    "Software Engineer",
-    "Full Stack Developer",
-    "Next.js",
-    "React",
-    "Node.js",
-  ],
   authors: [{ name: "Mohamed Haytham Mohamed" }],
   metadataBase: new URL("https://mohamedhaytham.vercel.app"),
   openGraph: {
-    title: "Mohamed Haytham Mohamed",
-    description: "Portfolio of a software engineer",
+    title,
+    description,
     siteName: "Mohamed Haytham Portfolio",
     images: [
       {
-        url: "/Logo.png",
-        width: 512,
-        height: 512,
-        alt: "Logo of Mohamed Haytham Mohamed",
+        url: "/mh-social.png",
+        width: 1200,
+        height: 630,
+        alt: "Mohamed Haytham, Full Stack Developer",
       },
     ],
     locale: "en_US",
@@ -37,33 +35,25 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mohamed Haytham Mohamed",
-    description: "Portfolio of a software engineer",
-    images: ["/Logo.png"],
+    title,
+    description,
+    images: ["/mh-social.png"],
   },
   icons: {
-    icon: "/Logo.png",
-    shortcut: "/Logo.png",
-    apple: "/Logo.png",
+    icon: { url: "/mh-logo.svg", type: "image/svg+xml" },
+    apple: "/mh-apple-icon.png",
   },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html
-      lang="en"
-      className={cn("h-full", "antialiased", "font-sans", notoSans.variable)}
-      suppressHydrationWarning
-    >
-      <body className="min-h-full flex flex-col">
+    <html lang="en" className={notoSans.variable} suppressHydrationWarning>
+      <body className="min-h-screen antialiased">
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
-          enableSystem
           disableTransitionOnChange
         >
           {children}
