@@ -1,4 +1,4 @@
-import { ArrowUpRight, Mail } from "lucide-react";
+import { ArrowUpRight, Download, Mail } from "lucide-react";
 import { Brand } from "@/components/shared/brand";
 import { SOCIAL_LINKS } from "@/data/social";
 import { CopyEmail } from "./copy-email";
@@ -20,6 +20,9 @@ export default function Footer() {
               <Mail size={18} aria-hidden="true" /> Email me
             </a>
             <CopyEmail email={EMAIL} />
+            <a href="/Full%20CV.pdf" download className={styles.contactOutline}>
+              <Download size={17} aria-hidden="true" /> Download CV
+            </a>
           </div>
         </div>
         <div className={styles.contactBottom}>

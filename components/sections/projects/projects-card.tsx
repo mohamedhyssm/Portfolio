@@ -77,7 +77,7 @@ export default function ProjectCard({ project }: { project: Project }) {
           </button>
           <Image
             src={project.image}
-            alt={`${project.title} homepage`}
+            alt={`${project.title} screenshot`}
             sizes="(max-width: 950px) 92vw, 850px"
             className={styles.dialogImage}
           />

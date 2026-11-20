@@ -18,7 +18,7 @@ export function CopyEmail({ email }: { email: string }) {
 
   return (
     <div>
-      <button type="button" onClick={copyEmail} className={styles.copyButton}>
+      <button type="button" onClick={copyEmail} className={styles.contactOutline}>
         {state === "copied" ? <Check size={17} aria-hidden="true" /> : <Copy size={17} aria-hidden="true" />}
         {state === "copied" ? "Email copied" : "Copy email"}
       </button>

@@ -1,5 +1,6 @@
 import type { StaticImageData } from "next/image";
 import alaaEssam from "@/public/Alaa Essam.png";
+import factoryDashboard from "@/public/factory.png";
 import kotbAcademy from "@/public/Kotb Academy.png";
 import wamdaAcademy from "@/public/Wamda Academy.png";
 
@@ -67,4 +68,18 @@ export const PROJECTS: Project[] = [
     image: kotbAcademy,
   },
   ...GROVE_ENGINE_WEBSITES,
+  {
+    title: "Factory Management System",
+    subtitle: "Operations & workforce management",
+    description:
+      "Built to replace paper-based factory workflows with a clean, fast digital system. Handles the full lifecycle from worker management to invoice generation — all in one place.",
+    highlights: [
+      "Worker & representative management",
+      "Real-time cost tracking",
+      "Automated invoice generation",
+      "Operations & production dashboard",
+    ],
+    tags: [],
+    image: factoryDashboard,
+  },
 ];

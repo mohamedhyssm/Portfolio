@@ -692,7 +692,7 @@
 .contactActions { display: flex; flex-wrap: wrap; gap: .55rem; align-items: start; }
 
 .emailLink,
-.copyButton {
+.contactOutline {
   display: inline-flex;
   align-items: center;
   gap: .5rem;
@@ -706,8 +706,8 @@
 
 .emailLink { background: var(--cloud); color: var(--ink); }
 .emailLink:hover { background: var(--ice); }
-.copyButton { border: 1px solid #b6c1ff; color: var(--cloud); }
-.copyButton:hover { background: #1d2fa8; }
+.contactOutline { border: 1px solid #b6c1ff; color: var(--cloud); }
+.contactOutline:hover { background: #1d2fa8; }
 .copyStatus { margin-top: .35rem; max-width: 16rem; font-size: .8rem; overflow-wrap: anywhere; }
 
 .contactBottom {
